@@ -186,20 +186,7 @@ previewPhotoSampleBuffer:(CMSampleBufferRef)previewPhotoSampleBuffer
 }
 
 - (UIImageOrientation)getJpegOrientation {
-  switch (_orientation) {
-    case UIDeviceOrientationPortrait:
-      if (self.sensorPosition == PigeonSensorPositionFront && _mirrorFrontCamera) {
-        return UIImageOrientationLeftMirrored;
-      } else {
-        return UIImageOrientationRight;
-      }
-    case UIDeviceOrientationLandscapeRight:
-      return (self.sensorPosition == PigeonSensorPositionBack) ? UIImageOrientationUp : UIImageOrientationDown;
-    case UIDeviceOrientationLandscapeLeft:
-      return (self.sensorPosition == PigeonSensorPositionBack) ? UIImageOrientationDown : UIImageOrientationUp;
-    default:
-      return UIImageOrientationLeft;
-  }
+  return  UIImageOrientationRight;
 }
 
 @end
