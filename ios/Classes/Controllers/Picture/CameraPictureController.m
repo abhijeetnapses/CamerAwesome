@@ -121,9 +121,7 @@ previewPhotoSampleBuffer:(CMSampleBufferRef)previewPhotoSampleBuffer
     }
   }
   
-  UIImage *imageConverted = [self imageByCroppingImage:image toSize:CGSizeMake(outputWidth, outputHeight)];
-  
-  image = [UIImage imageWithCGImage:[imageConverted CGImage] scale:0.0 orientation:[self getJpegOrientation]];
+  image = [UIImage imageWithCGImage:[image CGImage] scale:0.0 orientation:[self getJpegOrientation]];
 
   NSData *imageWithExif = [UIImageJPEGRepresentation(image, 1.0) addExif:container];
   
