@@ -24,12 +24,11 @@ class AwesomeFilterSelector extends StatefulWidget {
 }
 
 class _AwesomeFilterSelectorState extends State<AwesomeFilterSelector> {
-  final CarouselController _controller = CarouselController();
+  final CarouselSliderController _controller = CarouselSliderController();
   int? _textureId;
   int _selected = 0;
 
-  List<String> get presetsIds =>
-      widget.state.availableFilters!.map((e) => e.id).toList();
+  List<String> get presetsIds => widget.state.availableFilters!.map((e) => e.id).toList();
 
   @override
   void initState() {
